@@ -1,0 +1,61 @@
+@import './src/scss/utilities.scss';
+@import './src/scss/themes.scss';
+
+
+body {
+    line-height:150%;
+    text-align:center;
+    background-color: getValue(A,pageBackgroundColor);
+    font-family: getValue(A,bodyFont);
+}
+
+header {
+    height: 50px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+    @include themify($themes) {
+        font-family:themed('headingFont');
+    }
+}
+
+main {
+    margin:0 auto;
+    width:450px;
+}
+
+strong {
+    display: block;
+}
+
+button {
+    margin: 2rem 0 1rem 0;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin:1rem 0;
+}
+
+section {
+   article {
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @include themify($themes) {
+        background-color:themed('layerBackgroundColor');
+    }
+   }
+}

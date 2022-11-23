@@ -1,0 +1,17 @@
+@import './src/scss/utilities.scss';
+@import './src/scss/themes.scss';
+
+.myLink {
+    
+    // Non-themed props
+    
+
+    // Themed props
+    @include themify($themes) {
+      color: themed('linkTextColor'); 
+      
+      &:hover {
+        color: themed('buttonTextHoverColor'); 
+      }
+    }
+}
