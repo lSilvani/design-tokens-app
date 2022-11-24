@@ -1,0 +1,55 @@
+@import './src/scss/utilities.scss';
+@import './src/scss/themes.scss';
+
+.sds-card {
+
+  // Non-themed props
+  font-size: 16px;
+  -webkit-transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        transition: all .5s ease-out;
+
+  @include themify($theme) {
+    background:themed('layerImgBackgroundColor');  
+  }
+
+  .content {
+    padding: 1rem 2rem;
+    border-radius: 0 0 8px 8px;
+    @include themify($theme) {
+      background:themed('layerBackgroundColor');  
+      text-align:themed('cardAlignment');  
+    }
+  }
+
+  .img {
+    position: relative;
+    
+    @include themify($theme){
+      height: themed(avatarContainerHeight);
+    }
+    
+    img {
+        position: absolute;
+        @include themify($theme){
+          right: themed('avatarPositionRight');
+          top: themed('avatarPositionTop');
+          border-radius: themed('pictureBorderRadii');
+          border-color:themed(pageBackgroundColor);
+          width: themed(avatarWidth);
+          height: themed(avatarHeight);
+          
+        }
+        border-style: solid;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        transition: all .5s ease-out;
+        
+    }
+    margin-bottom:20px;
+    
+  }
+}

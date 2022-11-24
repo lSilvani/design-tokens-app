@@ -1,34 +1,45 @@
 @import './src/scss/utilities.scss';
 @import './src/scss/themes.scss';
 
-
 body {
     line-height:150%;
-    text-align:center;
-    background-color: getValue(A,pageBackgroundColor);
-    font-family: getValue(A,bodyFont);
+    background-color: getValue(sdsLight,pageBackgroundColor);
+    font-family: getValue(sdsLight,bodyFont);
+    padding: getValue(sdsLight,layerPadding);
+    color: getValue(sdsLight,bodyFontColor);
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
 }
 
 header {
     height: 50px;
 }
 
-img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+h1,h2,h3,h4,h5,h6 {
+    @include themify($theme) {
+        font-family:themed('headingFont');
+        color:themed('headingsFontColor');
+    }
 }
 
-h1,h2,h3,h4,h5,h6 {
-    text-align: center;
-    @include themify($themes) {
-        font-family:themed('headingFont');
+h1 {
+    @include themify($theme) {
+        font-size:themed('heading1Size');
     }
+    margin-bottom: .5rem;
 }
 
 main {
     margin:0 auto;
-    width:450px;
+    @include themify($theme) {
+        width: themed('cardWidth');
+    }
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
 }
 
 strong {
@@ -45,17 +56,22 @@ ul, li {
     padding: 0;
 }
 
-li {
-    margin:1rem 0;
-}
+
 
 section {
+    
    article {
-    padding: 4rem 2rem;
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    @include themify($themes) {
-        background-color:themed('layerBackgroundColor');
-    }
+    
    }
+}
+
+footer {
+    
+    border-radius: 0 0 10px 10px;
+    @include themify($theme) {
+        margin-top: (themed('layerPadding')/2);
+        padding-bottom: themed('buttonPadding');
+    }
 }

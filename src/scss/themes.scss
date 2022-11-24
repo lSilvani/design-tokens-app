@@ -1,32 +1,51 @@
-@use '@sicpa-dlab/sicpa-design-tokens/build/web/brand-3/tokens' as brand;
+@use '@sicpa-dlab/sicpa-design-tokens/build/web/brand-1/tokens' as brand;
 
-$themes: (
-  A: (
+$theme: (
+  sdsLight: (
 
     /* Global */
     pageBackgroundColor: brand.$color-page-background,
     
     /* Text */
-    bodyFont: brand.$font-family-base, 
-    headingFont: brand.$font-family-headers,
+    bodyFont: brand.$font-family-brand-body, 
+    bodyFontColor: brand.$color-neutral-grey-700,
+    headingsFont: brand.$font-family-brand-headings,
+    headingsFontColor: brand.$color-neutral-black,
+    heading1Size: brand.$size-heading-1*15,
+     
 
     /* Button */
     buttonTextTransform: none,
     buttonTextColor: brand.$color-neutral-white,
     buttonTextHoverColor: brand.$color-neutral-white,
-    buttonBorderRadius: brand.$border-radius-default,
+    buttonBorderRadius: brand.$border-radius-brand-default,
     buttonColor: brand.$button-color-background-rest,
     buttonHoverColor: brand.$button-color-background-hover,
-    buttonHoverActive: brand.$button-color-background-pressed,
+    buttonActiveColor: brand.$button-color-background-pressed,
+    buttonPadding: brand.$spacing-brand-layer-medium,
+    buttonWidth: brand.$button-width,
 
     /* Card */
-    layerBackgroundColor: brand.$color-layer-background,
+    cardWidth: brand.$card-width,
+    cardAlignment: brand.$card-alignment,
+    layerBackgroundColor: brand.$color-neutral-white,
+    layerImgBackgroundColor: brand.$card-background,
+    layerPadding: brand.$spacing-brand-layer-large*3,
+    footerColor: brand.$color-brand-100,
+    pictureBorderRadii: brand.$border-radius-brand-default,
+    avatarWidth: brand.$avatar-size-width,
+    avatarHeight: brand.$avatar-size-height,
+    avatarContainerHeight: brand.$card-profile-height,
+    avatarPositionRight:brand.$avatar-position-right,
+    avatarPositionTop:brand.$avatar-position-top,
+
 
     /* Link */
-    linkTextColor: brand.$button-color-background-rest
+    linkTextColor: brand.$button-color-background-rest,
+    linkTextHoverColor: brand.$color-brand-800,
     
   ),
-  B: (
+  sdsDark: (
     // TO DO: build case for dark theme?
   )
 );

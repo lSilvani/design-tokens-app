@@ -1,27 +1,40 @@
 @import './src/scss/utilities.scss';
 @import './src/scss/themes.scss';
 
-.myButton {
+.sds-button {
     
     // Non-themed props
     border: none;
-    padding: .6rem 1.5rem;
     font-size: 16px;
 
-
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    
     // Themed props
-    @include themify($themes) {
+    @include themify($theme) {
       border-radius: themed('buttonBorderRadius');
       color: themed('buttonTextColor'); 
       border-color: themed('buttonTextColor');
       background-color: themed('buttonColor');
       text-transform: themed('buttonTextTransform');
-  
+      padding: themed('buttonPadding');
+      font-family: themed('bodyFont');
+      width: themed('buttonWidth');
+
+
       &:hover {
         color: themed('buttonTextHoverColor'); 
         border-color: themed('buttonTextHoverColor');
         background-color: themed('buttonHoverColor');
         cursor: pointer;
       }
+
+      &:active {
+        background-color: themed('buttonActiveColor'); 
+      }
     }
+
+    
 }

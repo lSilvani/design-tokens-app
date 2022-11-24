@@ -7,11 +7,13 @@
     
 
     // Themed props
-    @include themify($themes) {
+    @include themify($theme) {
       color: themed('linkTextColor'); 
       
       &:hover {
-        color: themed('buttonTextHoverColor'); 
+        color: themed('linkTextHoverColor'); 
+        text-decoration: underline;
+        cursor: pointer;
       }
     }
 }

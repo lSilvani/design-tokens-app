@@ -8,7 +8,7 @@ export function Button(props) {
   let { children } = props;
 
   return (
-    <button class='myButton' {...buttonProps} ref={ref}>
+    <button className='sds-button' {...buttonProps} ref={ref}>
       {children}
     </button>
   );
