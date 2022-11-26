@@ -6,7 +6,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <div>
+      <div className="theme-sds-light">
         <main>
           <section>
             <Card></Card>

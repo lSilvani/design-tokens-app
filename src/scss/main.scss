@@ -3,9 +3,8 @@
 
 @function getValue($onetheme, $property) {
     @return map-get(map-get($theme, $onetheme), $property);
-  }
+}
   
-
 body {
     line-height:150%;
     -webkit-transition: all .5s ease-out;
@@ -13,9 +12,9 @@ body {
     -o-transition: all .5s ease-out;
     transition: all .5s ease-out;
 
-    background-color: getValue(sds-mode-light,pageBackgroundColor);
-    font-family: getValue(sds-mode-light,bodyFont);
-    color: getValue(sds-mode-light,bodyFontColor);
+    background-color: getValue(sds-light,pageBackgroundColor);
+    font-family: getValue(sds-light,bodyFont);
+    color: getValue(sds-light,bodyFontColor);
     
 }
 
