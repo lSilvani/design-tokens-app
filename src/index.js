@@ -4,7 +4,12 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootEl = document.getElementById('root');
+const root = ReactDOM.createRoot(rootEl);
+
+// Add the theme to the root element of your app
+rootEl.classList.add("theme-sds-mode-light");
+
 root.render(
   <React.StrictMode>
     <App />
