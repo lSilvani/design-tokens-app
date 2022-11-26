@@ -19,7 +19,4 @@
   @return map-get($theme-map, $key);
 }
 
-@function getValue($onetheme, $property) {
-  @return map-get(map-get($theme, $onetheme), $property);
-}
 

@@ -1,5 +1,5 @@
-@import './src/scss/utilities.scss';
-@import './src/scss/themes.scss';
+@use './src/scss/utilities.scss' as *;
+@use './src/scss/themes.scss' as *;
 
 .sds-button {
     
@@ -31,6 +31,4 @@
         background-color: themed('buttonActiveColor'); 
       }
     }
-
-    
 }
