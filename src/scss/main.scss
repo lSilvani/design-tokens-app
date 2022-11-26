@@ -3,10 +3,10 @@
 
 body {
     line-height:150%;
-    background-color: getValue(sdsLight,pageBackgroundColor);
-    font-family: getValue(sdsLight,bodyFont);
-    padding: getValue(sdsLight,layerPadding);
-    color: getValue(sdsLight,bodyFontColor);
+    background-color: getValue(sds-mode-light,pageBackgroundColor);
+    font-family: getValue(sds-mode-light,bodyFont);
+    padding: getValue(sds-mode-light,layerPadding);
+    color: getValue(sds-mode-light,bodyFontColor);
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
     -o-transition: all .5s ease-out;

@@ -5,20 +5,20 @@
 
   // Non-themed props
   font-size: 16px;
+  margin-top: 4rem;
+
+  @include themify($theme) {
+    background:themed('cardBackground');  
+    border-radius: themed('cardBorderRadius');
+  }
   -webkit-transition: all .5s ease-out;
         -moz-transition: all .5s ease-out;
         -o-transition: all .5s ease-out;
         transition: all .5s ease-out;
 
-  @include themify($theme) {
-    background:themed('layerImgBackgroundColor');  
-  }
-
   .content {
-    padding: 1rem 2rem;
-    border-radius: 0 0 8px 8px;
+    padding: 3rem 2rem;
     @include themify($theme) {
-      background:themed('layerBackgroundColor');  
       text-align:themed('cardAlignment');  
     }
   }
@@ -27,15 +27,24 @@
     position: relative;
     
     @include themify($theme){
-      height: themed(avatarContainerHeight);
+      height: themed('avatarContainerHeight');
+      background-color: themed('avatarBackgroundColor');
+      
+      border-top-left-radius: themed('cardBorderRadius');
+      border-top-right-radius: themed('cardBorderRadius');
+      
     }
+    -webkit-transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        transition: all .5s ease-out;
     
     img {
         position: absolute;
         @include themify($theme){
           right: themed('avatarPositionRight');
           top: themed('avatarPositionTop');
-          border-radius: themed('pictureBorderRadii');
+          border-radius: themed('avatarBorderRadius');
           border-color:themed(pageBackgroundColor);
           width: themed(avatarWidth);
           height: themed(avatarHeight);

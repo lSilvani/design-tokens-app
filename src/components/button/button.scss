@@ -18,14 +18,10 @@
       color: themed('buttonTextColor'); 
       border-color: themed('buttonTextColor');
       background-color: themed('buttonColor');
-      text-transform: themed('buttonTextTransform');
       padding: themed('buttonPadding');
       font-family: themed('bodyFont');
-      width: themed('buttonWidth');
-
-
+      
       &:hover {
-        color: themed('buttonTextHoverColor'); 
         border-color: themed('buttonTextHoverColor');
         background-color: themed('buttonHoverColor');
         cursor: pointer;
