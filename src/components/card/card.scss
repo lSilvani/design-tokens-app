@@ -10,6 +10,7 @@
   @include themify($theme) {
     background:themed('cardBackground');  
     border-radius: themed('cardBorderRadius');
+    color: themed('cardTextColor')
   }
   -webkit-transition: all .5s ease-out;
         -moz-transition: all .5s ease-out;

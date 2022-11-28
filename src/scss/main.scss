@@ -7,15 +7,13 @@
   
 body {
     line-height:150%;
+    background-color: getValue(sds-light,pageBackgroundColor);
+    font-family: getValue(sds-light,bodyFont);
+    color: getValue(sds-light,bodyFontColor);
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
     -o-transition: all .5s ease-out;
     transition: all .5s ease-out;
-
-    background-color: getValue(sds-light,pageBackgroundColor);
-    font-family: getValue(sds-light,bodyFont);
-    color: getValue(sds-light,bodyFontColor);
-    
 }
 
 header {
@@ -61,22 +59,9 @@ ul, li {
     padding: 0;
 }
 
-
-
 section {
-    
    article {
     border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;   
    }
-}
-
-footer {
-    
-    border-radius: 0 0 10px 10px;
-    @include themify($theme) {
-        margin-top: (themed('layerPadding')/2);
-        padding-bottom: themed('buttonPadding');
-    }
 }

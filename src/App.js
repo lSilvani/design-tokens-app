@@ -6,6 +6,7 @@ function App() {
 
   return (
     <React.Fragment>
+      {/* Add  the class to the main container */} 
       <div className="theme-sds-light">
         <main>
           <section>
