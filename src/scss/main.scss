@@ -1,12 +1,15 @@
-@import './src/scss/utilities.scss';
-@import './src/scss/themes.scss';
+@use './src/scss/utilities.scss' as *;
+@use './src/scss/themes.scss' as *;
 
+@function getValue($onetheme, $property) {
+    @return map-get(map-get($theme, $onetheme), $property);
+}
+  
 body {
     line-height:150%;
-    background-color: getValue(sdsLight,pageBackgroundColor);
-    font-family: getValue(sdsLight,bodyFont);
-    padding: getValue(sdsLight,layerPadding);
-    color: getValue(sdsLight,bodyFontColor);
+    background-color: getValue(sds-light,pageBackgroundColor);
+    font-family: getValue(sds-light,bodyFont);
+    color: getValue(sds-light,bodyFontColor);
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
     -o-transition: all .5s ease-out;
@@ -56,22 +59,9 @@ ul, li {
     padding: 0;
 }
 
-
-
 section {
-    
    article {
     border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;   
    }
-}
-
-footer {
-    
-    border-radius: 0 0 10px 10px;
-    @include themify($theme) {
-        margin-top: (themed('layerPadding')/2);
-        padding-bottom: themed('buttonPadding');
-    }
 }
