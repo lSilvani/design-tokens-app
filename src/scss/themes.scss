@@ -1,51 +1,118 @@
-@use '@sicpa-dlab/sicpa-design-tokens/build/web/brand-1/tokens' as brand;
+/* 
+
+------------------------------------------------------------------------
+NOTES
+------------------------------------------------------------------------
+** The demo does not use SCSS best practices, e.g. having resetting 
+formulas in a global, separate file
+** The demo demonstrates the usage of tokens for different purposes 
+and might go beyond the current needs for customisation in our apps. 
+** For the same reason, certain tokens might appear as misused
+** The demo uses a Sass map 
+** Dark mode is hardcoded (same for all themes), to be investigated
+
+** How it workds: 
+1. load the tokens from the desired theme
+2. apply the tokens to the elements and components
+3. pass the name of the mode to the main container 
+
+** Pros of this approach: 
+  - clear and clean code
+  - centralize point of management for the theme, separated from the rest of the code
+  - the map can contain only the elements that need to be themified
+  - control over the size generated 
+
+** Cons of this approach: 
+  - repeating the list of maps keys + references each time (but different references could be passed when needed)
+  - the IDE does not help in completing the values
+  - cannot use it with the body tag, as it compiles to .theme-xxx body, which is not possible
+
+*/
+
+// Import the tokens from the chosen theme
+@use '@sicpa-dlab/sicpa-design-tokens/build/web/theme-1/tokens';
 
 $theme: (
-  sdsLight: (
+  
+  // Modes can be mapped inside the theme 
+  sds-light: (
 
     /* Global */
-    pageBackgroundColor: brand.$color-page-background,
+    pageBackgroundColor: tokens.$color-background-ui,
     
     /* Text */
-    bodyFont: brand.$font-family-brand-body, 
-    bodyFontColor: brand.$color-neutral-grey-700,
-    headingsFont: brand.$font-family-brand-headings,
-    headingsFontColor: brand.$color-neutral-black,
-    heading1Size: brand.$size-heading-1*15,
-     
-
+    headingsFont: tokens.$font-family-headings,
+    heading1Size: tokens.$font-heading1,
+    headingsFontColor: tokens.$text-primary,
+    bodyFont: tokens.$font-family-body, 
+    bodyFontColor: tokens.$text-secondary,
+    
     /* Button */
-    buttonTextTransform: none,
-    buttonTextColor: brand.$color-neutral-white,
-    buttonTextHoverColor: brand.$color-neutral-white,
-    buttonBorderRadius: brand.$border-radius-brand-default,
-    buttonColor: brand.$button-color-background-rest,
-    buttonHoverColor: brand.$button-color-background-hover,
-    buttonActiveColor: brand.$button-color-background-pressed,
-    buttonPadding: brand.$spacing-brand-layer-medium,
-    buttonWidth: brand.$button-width,
+    buttonColor: tokens.$button-primary-rest,
+    buttonHoverColor: tokens.$button-primary-hover,
+    buttonActivePressed: tokens.$button-primary-pressed,
+    buttonPadding: tokens.$theme-button-type, // For demo purposes only
+    buttonTextColor: tokens.$text-oncolor,
+    buttonBorderRadius: tokens.$button-border-radius,
+    
 
     /* Card */
-    cardWidth: brand.$card-width,
-    cardAlignment: brand.$card-alignment,
-    layerBackgroundColor: brand.$color-neutral-white,
-    layerImgBackgroundColor: brand.$card-background,
-    layerPadding: brand.$spacing-brand-layer-large*3,
-    footerColor: brand.$color-brand-100,
-    pictureBorderRadii: brand.$border-radius-brand-default,
-    avatarWidth: brand.$avatar-size-width,
-    avatarHeight: brand.$avatar-size-height,
-    avatarContainerHeight: brand.$card-profile-height,
-    avatarPositionRight:brand.$avatar-position-right,
-    avatarPositionTop:brand.$avatar-position-top,
-
+    cardBorderRadius: tokens.$card-border-radius,
+    cardBackground: tokens.$card-background,
+    cardAlignment: tokens.$card-content-alignment,
+    avatarBorderRadius: tokens.$theme-card-avatar-border-radius,
+    avatarBackgroundColor: tokens.$card-avatar-background,
+    avatarContainerHeight: tokens.$card-header-height,
+    cardWidth: tokens.$card-width,
+    avatarWidth: tokens.$card-avatar-widthheight,
+    avatarHeight: tokens.$card-avatar-widthheight,
+    avatarPositionRight:tokens.$avatar-position-right,
+    avatarPositionTop:tokens.$avatar-position-top,
 
     /* Link */
-    linkTextColor: brand.$button-color-background-rest,
-    linkTextHoverColor: brand.$color-brand-800,
+    linkTextColor: tokens.$button-primary-rest,
+    linkTextHoverColor: tokens.$color-brand-800,
     
   ),
-  sdsDark: (
-    // TO DO: build case for dark theme?
+  sds-dark: (
+
+    // Generated from the same tokens of the light
+    // TO DO: manage the tokens for dark theme through Figma Tokens
+
+    pageBackgroundColor: tokens.$color-background-ui,
+    
+    /* Text */
+    headingsFont: tokens.$font-family-headings,
+    heading1Size: tokens.$font-heading1,
+    headingsFontColor: tokens.$text-oncolor,
+    bodyFont: tokens.$font-family-body, 
+    bodyFontColor: tokens.$text-oncolor,
+    
+    /* Button */
+    buttonColor: tokens.$button-primary-rest,
+    buttonHoverColor: tokens.$button-primary-hover,
+    buttonActivePressed: tokens.$button-primary-pressed,
+    buttonPadding: tokens.$theme-button-type, // For demo purposes only
+    buttonTextColor: tokens.$text-oncolor,
+    buttonBorderRadius: tokens.$button-border-radius,
+
+    /* Card */
+    cardBorderRadius: tokens.$card-border-radius,
+    cardBackground: tokens.$color-neutral-grey-900,
+    cardAlignment: tokens.$card-content-alignment,
+    avatarBorderRadius: tokens.$theme-card-avatar-border-radius,
+    avatarBackgroundColor: tokens.$color-brand-500,
+    avatarContainerHeight: tokens.$card-header-height,
+    cardWidth: tokens.$card-width,
+    cardTextColor: tokens.$text-oncolor, // This props miss in the light theme, which means we customise only what we need within the modes
+    avatarWidth: tokens.$card-avatar-widthheight,
+    avatarHeight: tokens.$card-avatar-widthheight,
+    avatarPositionRight:tokens.$avatar-position-right,
+    avatarPositionTop:tokens.$avatar-position-top,
+
+    /* Link */
+    linkTextColor: tokens.$text-oncolor,
+    linkTextHoverColor: tokens.$color-brand-800,
+    
   )
 );

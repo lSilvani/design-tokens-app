@@ -1,31 +1,30 @@
-@import './src/scss/utilities.scss';
-@import './src/scss/themes.scss';
+@use './src/scss/utilities.scss' as *;
+@use './src/scss/themes.scss' as *;
 
 .sds-button {
-    
-    // Non-themed props
-    border: none;
-    font-size: 16px;
 
+    // Non-themed props
+    // PRO - only themify what you need
+    border: none;
+    font-size: 1rem;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-    
+
     // Themed props
+    // Wrap all themed properties in @themify mixin, and you access properties defined 
+    // in themes by calling themed() function with the property name. 
+    // Calling themed() outside @themify won’t work
     @include themify($theme) {
       border-radius: themed('buttonBorderRadius');
       color: themed('buttonTextColor'); 
       border-color: themed('buttonTextColor');
       background-color: themed('buttonColor');
-      text-transform: themed('buttonTextTransform');
       padding: themed('buttonPadding');
       font-family: themed('bodyFont');
-      width: themed('buttonWidth');
-
-
+      
       &:hover {
-        color: themed('buttonTextHoverColor'); 
         border-color: themed('buttonTextHoverColor');
         background-color: themed('buttonHoverColor');
         cursor: pointer;
@@ -35,6 +34,5 @@
         background-color: themed('buttonActiveColor'); 
       }
     }
-
-    
+   
 }

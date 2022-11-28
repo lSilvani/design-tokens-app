@@ -2834,10 +2834,10 @@
   "resolved" "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
   "version" "1.2.0"
 
-"@sicpa-dlab/sicpa-design-tokens@^0.0.8":
-  "integrity" "sha512-3e8uLA47y1yRAw2jxn80EzxcKcu9RGgrQR4o4AJ6++VCE8YdWhbvR+YvcLpyVpgo3erfCV83ZuZItzI1wY00nA=="
-  "resolved" "https://npm.pkg.github.com/download/@sicpa-dlab/sicpa-design-tokens/0.0.8/7ecfa1b4d39143aca414c4b31428c4032900a4f8"
-  "version" "0.0.8"
+"@sicpa-dlab/sicpa-design-tokens@^0.0.9":
+  "integrity" "sha512-vZ966jZbPuH+BZ8fSh/LJshmMD8G07DZNoidTmOOwHNUyS1OMtZFnzIs+DntUJh3AbTXUJOC1933zNsECEjxCw=="
+  "resolved" "https://npm.pkg.github.com/download/@sicpa-dlab/sicpa-design-tokens/0.0.9/bdb1a7f5d80e9b560b9a446f2d178c49ea71462a"
+  "version" "0.0.9"
   dependencies:
     "@supernovaio/cli" "latest"
     "style-dictionary" "^3.7.1"
@@ -3954,9 +3954,9 @@
   "version" "4.5.2"
 
 "axios@^1.1.3":
-  "integrity" "sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA=="
-  "resolved" "https://registry.npmjs.org/axios/-/axios-1.1.3.tgz"
-  "version" "1.1.3"
+  "integrity" "sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-1.2.0.tgz"
+  "version" "1.2.0"
   dependencies:
     "follow-redirects" "^1.15.0"
     "form-data" "^4.0.0"
