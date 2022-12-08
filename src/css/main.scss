@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=IBM+Plex+Sans:wght@300;400&family=IBM+Plex+Serif&family=PT+Sans:wght@400;700&family=Patrick+Hand&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Global styles */
+@import '@sicpa-dlab/sicpa-design-tokens/build/web/theme-2/global-tokens';
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    @import "@sicpa-dlab/sicpa-design-tokens/build/web/theme-2/tokens-light";    
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    @import "@sicpa-dlab/sicpa-design-tokens/build/web/theme-2/tokens-dark";   
+}
+
+/* When a user selects one of these color schemes, the operating system 
+makes adjustments to the user interface. This includes form controls, 
+scrollbars, and the used values of CSS system colors. 
+=> https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    line-height:150%;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+
+    background-color: var(--color-brand-background-ui);
+    font-family: var( --font-platform-system);
+    color: var(--color-text-primary);   
+}
+
+a {
+    color:var(--interactive-default);
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: .5rem;
+    font-size: var(--font-heading1);
+}
+
+main {
+    margin:3rem auto;
+    max-width: 400px;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+strong {
+    display: block;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-rounded);
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    padding: 32px;
+    background-color: var(--color-brand-layer-background);
+    border-radius: var(--border-radius-50);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;   
+}

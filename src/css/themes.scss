@@ -1,0 +1,84 @@
+/* 
+
+------------------------------------------------------------------------
+NOTES
+------------------------------------------------------------------------
+** The demo does not use SCSS best practices, e.g. having resetting 
+formulas in a global, separate file
+** The demo demonstrates the usage of tokens for different purposes 
+and might go beyond the current needs for customisation in our apps. 
+** For the same reason, certain tokens might appear as misused
+** The demo uses a Sass map 
+** Dark mode is hardcoded (same for all themes), to be investigated
+
+** How it workds: 
+1. load the tokens from the desired theme
+2. apply the tokens to the elements and components
+3. pass the name of the mode to the main container 
+
+** Pros of this approach: 
+  - clear and clean code
+  - centralize point of management for the theme, separated from the rest of the code
+  - the map can contain only the elements that need to be themified
+  - control over the size generated 
+
+** Cons of this approach: 
+  - repeating the list of maps keys + references each time (but different references could be passed when needed)
+  - the IDE does not help in completing the values
+  - cannot use it with the body tag, as it compiles to .theme-xxx body, which is not possible
+
+*/
+
+// Import the tokens from the chosen theme
+@import '@sicpa-dlab/sicpa-design-tokens/build/web/theme-1/tokens';
+
+@media (prefers-color-scheme: dark) {
+	@import '@sicpa-dlab/sicpa-design-tokens/build/web/theme-1/tokens-dark';
+}
+
+$theme: (
+  // Modes can be mapped inside the theme 
+  sds-light: (
+
+    /* Global */
+    pageBackgroundColor: $color-test-background-ui,
+    
+    /* Text */
+    headingsFont: $font-family-headings,
+    heading1Size: $font-heading1,
+    headingsFontColor: $text-primary,
+    bodyFont: $font-family-body, 
+    bodyFontColor: $text-secondary,
+    
+    /* Button */
+    buttonColor: $interactive-default,
+    buttonHoverColor: $interactive-hover,
+    buttonActivePressed: $interactive-pressed,
+    buttonPadding: $spacing-8,
+    buttonTextColor: $text-oncolor,
+    buttonBorderRadius: $border-radius-6,
+    
+
+    /* Card */
+    cardBorderRadius: $border-radius-6,
+    cardBackground: $color-test-background-ui,
+    cardAlignment: $alignment-left,
+    avatarBorderRadius: $border-radius-6,
+    avatarBackgroundColor: $background-layer,
+    avatarContainerHeight: 200px,
+    cardWidth: 200px,
+    avatarWidth: 200px,
+    avatarHeight: 200px,
+    avatarPositionRight:0px,
+    avatarPositionTop:0px,
+
+    /* Link */
+    linkTextColor: $interactive-default,
+    linkTextHoverColor: $interactive-hover,
+    
+  ),
+  sds-dark: (
+    pageBackgroundColor: $color-test-background-ui,
+    
+  )
+);
